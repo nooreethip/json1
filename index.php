@@ -21,6 +21,7 @@
     </table>
 </div>
 <div id="detail">
+</div>    
     <table>
         <thead>
             <tr>

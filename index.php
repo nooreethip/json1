@@ -38,10 +38,11 @@
     function showDetails(id){
         $("#main").hide();
         $("#detail").show();
-        var url = "https://jsonplaceholder.typicode.com/posts/"+id;
+        var url = "https://jsonplaceholder.typicode.com/posts/1"+id;
         $.getJSON(url)
             .done((data)=>{
                 console.log(data);
+                $("#tbldetail").append(line);
             })
             .fail((xhr, status, error)=>{
             })
@@ -68,28 +69,7 @@
             .fail((xhr, status, error)=>{
             })
     }
-    function loadPosts(){
-        $("#main").show();
-        $("#details").hide();
-        
-        var url = "https://jsonplaceholder.typicode.com/posts/1";
-        $.getJSON(url)
-            .done((data)=>{
-                $.each(data, (k, item)=>{
-                    console.log(item);
-                    var line = "<tr>";
-                        line += "<td>"+ item.id + "</td>";
-                        line += "<td><b>"+ item.title + "</b><br/>";
-                        line += item.body + "</td>";
-                        line += "<td> <button onClick='showDetails("+ item.id +");' > link </button> </td>";
-                        line += "</tr>";
-                    $("#tblPosts").append(line);
-                });
-                $("#detail").show();
-            })
-            .fail((xhr, status, error)=>{
-            })
-    }
+   
     
     $(()=>{
         loadPosts();

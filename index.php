@@ -16,24 +16,34 @@
 
 <body>
 
+<body>
+ 
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>First Name</th><th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody id="tblStudent">
+        </tbody>
+    </table>
 </body>
 <script>
-function loadJSON() {
-    var url = "http://cj-android-demon.herokuapp.com/json2.php";
+ 
+function loadJSON(){
+    var url = "https://cj-android-demon.herokuapp.com/json2.php";
+
     $.getJSON(url)
-         .done((data)=>{
+        .done((data)=>{
             console.log(data);
-            console.log(data[1]);
-            console.log(data[2].fname);
-         })
-         .fail((xhr,status,err)=>{
+        })
+        .fail((xhr, status, err)=>{
 
-         });
+        });
 }
-    $(() => {
-        $("btnJSON1").click(loadJSON);
 
-    });
+$(()=>{
+    loadJSON();
+});
 </script>
 
-</html>

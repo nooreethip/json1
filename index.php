@@ -31,7 +31,7 @@
                 line += "<td>" + item.title + "</td>";
                 line += "<td>" + link + "</td>";
                 line += "</tr>";
-                $("#tblPost").append(line);
+                $("#tblpost").append(line);
             });
         })
         .fail((xhr, status, err)=>{

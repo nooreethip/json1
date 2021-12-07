@@ -21,6 +21,9 @@
         var url = "http://cj-android-demon.herokuapp.com/json1.php";
         $.get(url, (data, status) => {
             console.log(data);
+            var jdata = JSON.parse(data);
+            console.log(jdata,fname);
+            console.log(jdata,lname);
         });
     }
     $(() => {

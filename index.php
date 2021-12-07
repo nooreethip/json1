@@ -10,8 +10,9 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 </head>
-
-<button id="btnJSON1"> JSON 1 </button>
+    <button id="btnJSON1"> JSON 1 </button>
+    name : <span id="fname"</span><br/>
+    name : <span id="lname"</span>
 
 <body>
 

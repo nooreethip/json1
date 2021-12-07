@@ -11,8 +11,8 @@
 
 </head>
     <button id="btnJSON1"> JSON 1 </button>
-    name : <span id="fname"</span><br/>
-    name : <span id="lname"</span>
+    fname : <span id="fname"</span><br/>
+    lname : <span id="lname"</span>
 
 <body>
 

@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
-<button id="btnBack"> back </button>
+
 <div id="main">
     <table>
         <thead>
@@ -24,30 +24,31 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th> <th>Title</th><th> Details </th>
+                <th>ID</th> <th>Title</th><th> User ID </th>
             </tr>
         </thead>
-        <tbody id="tbldetail">
+        <tbody id="tblDetail">
         </tbody>
     </table>
 </div>
+
     
 </body>
 <script>
     function showDetails(id){
         $("#main").hide();
         $("#detail").show();
-        var url = "https://jsonplaceholder.typicode.com/posts/"+id;
+        var url = "https://jsonplaceholder.typicode.com/posts/"+id
         $.getJSON(url)
             .done((data)=>{
                 console.log(data);
-                var line = "<tr id=details>";
+                var line = "<tr id=rowdetail>";
                     line += "<td>"+ data.id + "</td>";
                     line += "<td><b>"+ data.title + "</b><br/>";
                     line += data.body + "</td>";
-                    line += "<td> <button onClick='showDetails("+ item.id +");' > link </button> </td>";
+                    line += "<td>"+ data.userId+" </td>";
                     line += "</tr>";
-                $("#tbldetail").append(line);
+                $("#tblDetail").append(line);
             })
             .fail((xhr, status, error)=>{
             })
@@ -76,7 +77,8 @@
         $("#btnBack").click(()=>{
             $("#main").show();
             $("#detail").hide();
-            $("#details").remove();
+            $("#rowdetail").remove();
+                        
         });
     })
 </script>

@@ -19,7 +19,7 @@
 </body>
 <script>
 function loadJSON() {
-    var url = "http://cj-android-demon.herokuapp.com/json1.php";
+    var url = "http://cj-android-demon.herokuapp.com/json2.php";
     $.getJSON(url)
          .done((data)=>{
               console.log(data);

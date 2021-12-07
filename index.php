@@ -8,40 +8,41 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
- 
     <table>
         <thead>
             <tr>
-                <th>ID</th><th>First Name</th><th>Last Name</th>
+                <th>Id</th> <th>Title</th> <th>Author</th>
             </tr>
         </thead>
-        <tbody id="tblStudent">
+        <tbody id="tblpost"> 
+
         </tbody>
     </table>
 </body>
 <script>
- 
-function loadJSON(){
-    var url = "https://cj-android-demon.herokuapp.com/json2.php";
-    $.getJSON(url)
+    function loadPost(){
+        var url= "https://jsonplaceholder.typicode.com/posts/"
+        $.getJSON(url)
         .done((data)=>{
-            console.log(data);
             $.each(data,  (k, item)=>{
-                console.log(k);
-                console.log(item);
-                var line = "<tr>";
-                    line += "<td>" + (k+1) + "</td>";
-                    line += "<td>" + item.fname + "</td>";
-                    line += "<td>" + item.lname + "</td>";
-                    line += "</tr>";
-                $("#tblStudent").append(line);
+            console.log(data);
+            var line = "<tr>";
+                line += "<td>" + item.id + "</td>";
+                line += "<td>" + item.title + "</td>";
+                line += "<td>" + link + "</td>";
+                line += "</tr>";
+                $("#tblPost").append(line);
             });
         })
         .fail((xhr, status, err)=>{
         });
-}
+    }
+
 $(()=>{
     loadJSON();
 });
 </script>
 </html>
+
+
+

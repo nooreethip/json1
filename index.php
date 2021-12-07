@@ -22,7 +22,9 @@ function loadJSON() {
     var url = "http://cj-android-demon.herokuapp.com/json2.php";
     $.getJSON(url)
          .done((data)=>{
-              console.log(data);
+            console.log(data);
+            console.log(data[1]);
+            console.log(data[2].fname);
          })
          .fail((xhr,status,err)=>{
 
